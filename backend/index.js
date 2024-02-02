@@ -16,7 +16,7 @@ connection.once('open', () => {
 
 app.use(cors());
 app.use(cors({credentials: true,
-  origin: ["http://localhost:3000", process.env.FRONTEND_URI],
+  origin: ["http://localhost:3000", "jobapplicationtracker-t68s.vercel.app"],
   
  }));
 
