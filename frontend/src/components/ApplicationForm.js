@@ -14,7 +14,7 @@ const ApplicationForm = () => {
   useEffect(() => {
     if (id) {
       // Fetch application details for editing
-      axios.get(`jobapplicationtracker.vercel.app/api/applications/${id}`)
+      axios.get(`https://jobapplicationtracker.vercel.app/api/applications/${id}`)
         .then(response => {
           const application = response.data;
           setJobTitle(application.jobTitle);
@@ -34,12 +34,12 @@ const ApplicationForm = () => {
 
     if (id) {
       // Update existing application
-      axios.post(`jobapplicationtracker.vercel.app/api/applications/update/${id}`, applicationData)
+      axios.post(`https://jobapplicationtracker.vercel.app/applications/update/${id}`, applicationData)
         .then(response => console.log(response.data))
         .catch(error => console.error('Error updating application:', error));
     } else {
       // Add new application
-      axios.post('jobapplicationtracker.vercel.app/api/applications/add', applicationData)
+      axios.post('https://jobapplicationtracker.vercel.app/api/applications/add', applicationData)
         .then(response => console.log(response.data))
         .catch(error => console.error('Error adding new application:', error));
     }
