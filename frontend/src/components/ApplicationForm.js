@@ -34,7 +34,7 @@ const ApplicationForm = () => {
 
     if (id) {
       // Update existing application
-      axios.post(`https://jobapplicationtracker.vercel.app/applications/update/${id}`, applicationData)
+      axios.post(`https://jobapplicationtracker.vercel.app/api/applications/update/${id}`, applicationData)
         .then(response => console.log(response.data))
         .catch(error => console.error('Error updating application:', error));
     } else {
