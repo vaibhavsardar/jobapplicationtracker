@@ -7,7 +7,7 @@ const ApplicationsList = () => {
 
   useEffect(() => {
     // Fetch applications from the backend
-    axios.get('http://localhost:5000/api/applications')
+    axios.get('jobapplicationtracker.vercel.app/api/applications')
       .then(response => setApplications(response.data))
       .catch(error => console.error('Error fetching applications:', error));
   }, []);
@@ -15,7 +15,7 @@ const ApplicationsList = () => {
   const deleteApplication = (id) => {
     // Delete application from the backend
     console.log("del",id)
-    axios.get(`http://localhost:5000/api/applications/delete/${id}`)
+    axios.get(`jobapplicationtracker.vercel.app/api/applications/delete/${id}`)
       .then(response => {
         console.log(response.data);
         // Update the local state after deletion
